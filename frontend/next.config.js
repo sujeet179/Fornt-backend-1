@@ -4,10 +4,14 @@
 // module.exports = nextConfig
 
 
-const nextConfig = {
-    images: {
-      domains: ['localhost'], // Add your localhost hostname here
-    },
-  }
-  
-  module.exports = nextConfig
+// next.config.js
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: '/your-target-page',
+      },
+    ];
+  },
+};
